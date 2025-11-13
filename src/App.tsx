@@ -29,6 +29,47 @@ function AudioPlayer() {
   );
 }
 
+function BottomWave() {
+  return (
+    <div className="absolute bottom-0 left-0 w-full h-24 sm:h-32 md:h-40 wave-bottom z-0">
+      {/* Ici ta vague est dessinée via CSS (background ou SVG) */}
+    </div>
+  );
+}
+
+function BottomMenu() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="absolute bottom-4 left-0 w-full flex items-center justify-center z-20">
+      <div className="relative">
+        <button
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          className="px-10 py-2 bg-indigo-700 text-white rounded hover:bg-indigo-500 transition flex items-center gap-2"
+        >
+          Menu {open ? "▲" : "▼"}
+        </button>
+
+      <div
+          className={`absolute bottom-full mb-2 flex flex-col  items-center bg-gray-800 text-white rounded shadow-lg p-10 gap-3 transform transition-all duration-300 origin-bottom ${
+            open ? "scale-y-100 opacity-90" : "scale-y-0 opacity-0"
+          }`}
+          role="menu"
+        >
+          <a href="#apropos" className="hover:text-indigo-400 transition">About</a>
+          <a href="#services" className="hover:text-indigo-400 transition">Services</a>
+          <a href="#contact" className="hover:text-indigo-400 transition">Contact</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+
+
+
 function App() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 text-white relative">
@@ -55,13 +96,8 @@ function App() {
           <p className="mt-3 text-sm sm:text-base md:text-lg">Badlands</p>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 w-full h-24 sm:h-32 md:h-40 wave-bottom flex flex-col sm:flex-row items-center justify-center pt-8 gap-4 sm:gap-10">
-        <a href="#accueil" className="hover:text-indigo-400 transition">Accueil</a>
-        <a href="#apropos" className="hover:text-indigo-400 transition">À propos</a>
-        <a href="#services" className="hover:text-indigo-400 transition">Services</a>
-        <a href="#contact" className="hover:text-indigo-400 transition">Contact</a>
-      </div>
+      <BottomWave /> 
+      <BottomMenu />
 
       {/* Player audio intégré */}
       <AudioPlayer />
