@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Vague en bas */
+  .wave-bottom {
+    background: linear-gradient(270deg, #0f172a, #0f274e, #0f0c6d);
+    clip-path: ellipse(120% 60% at 50% 100%);
+    animation: waveMoveBottom 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes waveMoveBottom {
+    0%   { clip-path: ellipse(90% 55% at 48% 100%); background-position: 0% 50%; }
+    50%  { clip-path: ellipse(130% 65% at 52% 100%); background-position: 100% 50%; }
+    100% { clip-path: ellipse(90% 55% at 48% 100%); background-position: 0% 50%; }
+  }
+
+  /* Vague en haut */
+  .wave-top {
+    background: linear-gradient(270deg, #0f172a, #0f274e, #0f0c6d);
+    clip-path: ellipse(120% 60% at 50% 0%);
+    animation: waveMoveTop 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    background-size: 200% 200%;
+  }
+
+  @keyframes waveMoveTop {
+    0%   { clip-path: ellipse(90% 55% at 52% 0%); background-position: 100% 50%; }
+    50%  { clip-path: ellipse(130% 65% at 48% 0%); background-position: 0% 50%; }
+    100% { clip-path: ellipse(90% 55% at 52% 0%); background-position: 100% 50%; }
+  }
+}
