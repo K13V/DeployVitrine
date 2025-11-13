@@ -17,7 +17,7 @@ function AudioPlayer() {
   return (
     <div className="absolute top-4 right-4 flex flex-col items-center gap-2">
       <audio ref={audioRef} autoPlay loop>
-        <source src="public/EverythingIsInItsRightPlace.mp3" type="audio/mpeg" />
+        <source src="/EverythingIsInItsRightPlace.mp3" type="audio/mpeg" />
       </audio>
       <button
         onClick={toggleAudio}
