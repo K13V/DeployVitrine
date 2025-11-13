@@ -38,9 +38,17 @@ function App() {
       </div>
 
       {/* Contenu principal */}
-      <div className="flex items-center justify-center h-screen">
-        <p className="text-lg">Contenu central de la page</p>
+    <div className="flex flex-col items-center justify-center h-screen gap-3">
+      <div className="mb-6 text-center">
+        <p className="text-3xl"> Entreprises et particuliers pour qui j'ai composé : </p>
       </div>
+      <div className="flex flex-col items-center justify-center">
+        <img src="/badlands.png" className="w-1/5 h-auto" alt="badlands" />
+        <p>Badlands</p>
+      </div>
+    </div>
+
+
 
       {/* Vague en bas avec menu centré */}
       <div className="absolute bottom-0 left-0 w-full h-40 wave-bottom flex flex-row items-end justify-center gap-15 pb-4">
