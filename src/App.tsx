@@ -44,7 +44,7 @@ function App() {
       </div>
       <div className="flex flex-col items-center justify-center">
         <img src="/badlands.png" className="w-1/5 h-auto" alt="badlands" />
-        <p>Badlands</p>
+        <p className="mt-3">Badlands</p>
       </div>
     </div>
 
